@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>EDLD 610 Final Project</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jim Wright" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/uo.css" rel="stylesheet" />
+    <link href="libs/remark-css/uo-fonts.css" rel="stylesheet" />
+    <script src="libs/core-js/shim.min.js"></script>
+    <script src="libs/react/react.min.js"></script>
+    <script src="libs/react/react-dom.min.js"></script>
+    <script src="libs/reactwidget/react-tools.js"></script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/reactable-binding/reactable.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# EDLD 610 Final Project
+## Winter 2020
+### Jim Wright
+
+---
+
+
+
+
+
+# Data Description 
+
+* Data from FiveThirtyEight GitHub page  (https://github.com/fivethirtyeight/data/tree/master/college-majors)
+* Consists of five data sets from the American Community Survey 2010-2012 Public Use Microdata Series
+* 5 total data sets with information on basic earnings and labor information 
+* 2 primary data sets used for project: recent_grads.csv and women-stem.csv
+* Both arranged in order of median salary for reported college major on the survey 
+
+
+---
+# Plot 1
+
+* Goal is to communicate median salary per either college major or major category variables
+* 5 total versions
+
+---
+
+# Version 1
+
+* College major variable contained too many values for a bar graph 
+* College major_category was easier to plot (16 values)
+* Key point: Engineering major category has highest median salary by a A LOT
+
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 1 version 1-1.png)&lt;!-- --&gt;
+
+---
+
+# Version 2
+
+Added some color to the major category of Education 
+
+![](Winter-2020-Presentation_files/figure-html/plot 1, version 2-1.png)&lt;!-- --&gt;
+
+---
+
+# Plot 1 Versions 3 and 4
+
+* Wanted to explore alternative plot options
+* Plot 3 - histogram
+* Plot 4 - density plot
+
+## Version 3
+
+![](Winter-2020-Presentation_files/figure-html/plot 1, version 3-1.png)&lt;!-- --&gt;
+
+
+---
+# Version 4
+
+![](Winter-2020-Presentation_files/figure-html/plot 1, version 4-1.png)&lt;!-- --&gt;
+
+---
+
+# Final Version
+
+* Returned to the bar graph 
+* Sliced the top 20 median salaries by college major to use that variable 
+
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 1, final version-1.png)&lt;!-- --&gt;
+
+---
+# Plot 2
+
+.pull-left[
+
+## Details
+* Goal is to communicate unemployment rates across college major and major category variables
+* 3 total versions
+]
+
+.pull-right[
+
+## Variables and Functions Used
+* Continous variables representing male and female employment totals per major
+* mutate() function was used to make these values percentages per major
+* pivot_longer() used to create one variable with individual values for percentage of males and percentage of females
+]
+
+---
+# Version 1
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 2 version 1-1.png)&lt;!-- --&gt;
+
+#### A little hard to interpret 
+
+
+--- 
+
+# Version 2
+
+![](Winter-2020-Presentation_files/figure-html/plot 2 version 2-1.png)&lt;!-- --&gt;
+
+#### Could not get my text labels to work!
+
+---
+
+# Final Version 
+
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 2 final version-1.png)&lt;!-- --&gt;
+
+
+---
+# Plot 3
+
+.pull-left[
+
+## Details
+* Goal is to communicate employment rate of women in STEM related fields 
+* 3 total versions and two additional tables 
+* Learned that gt tables don't fit well on flexdashboards or slides
+]
+
+.pull-right[
+
+## Variables and Functions Used
+* major and major category
+* used filter() to focus on engineering major category for versions 1 and 2
+* final version included slice() function to identify top 10 and bottom 10 for women employment   rate
+* then used bin_rows() to combine these objects for final plot
+]
+
+---
+# Version 1
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 3 version 1-1.png)&lt;!-- --&gt;
+
+--- 
+
+# Version 2
+
+![](Winter-2020-Presentation_files/figure-html/plot 3 version 2-1.png)&lt;!-- --&gt;
+
+---
+
+# Final Version
+
+
+
+![](Winter-2020-Presentation_files/figure-html/plot 3 final version-1.png)&lt;!-- --&gt;
+
+---
+
+# Table Practice! 
+
+## GT Table
+
+
+
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#opucivlvev .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  /* table.margin.left */
+  margin-right: auto;
+  /* table.margin.right */
+  color: #333333;
+  font-size: 16px;
+  /* table.font.size */
+  background-color: #FFFFFF;
+  /* table.background.color */
+  width: auto;
+  /* table.width */
+  border-top-style: solid;
+  /* table.border.top.style */
+  border-top-width: 2px;
+  /* table.border.top.width */
+  border-top-color: #A8A8A8;
+  /* table.border.top.color */
+  border-bottom-style: solid;
+  /* table.border.bottom.style */
+  border-bottom-width: 2px;
+  /* table.border.bottom.width */
+  border-bottom-color: #A8A8A8;
+  /* table.border.bottom.color */
+}
+
+#opucivlvev .gt_heading {
+  background-color: #FFFFFF;
+  /* heading.background.color */
+  border-bottom-color: #FFFFFF;
+  /* table.background.color */
+  border-left-style: hidden;
+  /* heading.border.lr.style */
+  border-left-width: 1px;
+  /* heading.border.lr.width */
+  border-left-color: #D3D3D3;
+  /* heading.border.lr.color */
+  border-right-style: hidden;
+  /* heading.border.lr.style */
+  border-right-width: 1px;
+  /* heading.border.lr.width */
+  border-right-color: #D3D3D3;
+  /* heading.border.lr.color */
+}
+
+#opucivlvev .gt_title {
+  color: #333333;
+  font-size: 125%;
+  /* heading.title.font.size */
+  font-weight: initial;
+  /* heading.title.font.weight */
+  padding-top: 4px;
+  /* heading.top.padding - not yet used */
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  /* table.background.color */
+  border-bottom-width: 0;
+}
+
+#opucivlvev .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  /* heading.subtitle.font.size */
+  font-weight: initial;
+  /* heading.subtitle.font.weight */
+  padding-top: 0;
+  padding-bottom: 4px;
+  /* heading.bottom.padding - not yet used */
+  border-top-color: #FFFFFF;
+  /* table.background.color */
+  border-top-width: 0;
+}
+
+#opucivlvev .gt_bottom_border {
+  border-bottom-style: solid;
+  /* heading.border.bottom.style */
+  border-bottom-width: 2px;
+  /* heading.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* heading.border.bottom.color */
+}
+
+#opucivlvev .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#opucivlvev .gt_col_headings {
+  border-top-style: solid;
+  /* column_labels.border.top.style */
+  border-top-width: 2px;
+  /* column_labels.border.top.width */
+  border-top-color: #D3D3D3;
+  /* column_labels.border.top.color */
+  border-bottom-style: solid;
+  /* column_labels.border.bottom.style */
+  border-bottom-width: 2px;
+  /* column_labels.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* column_labels.border.bottom.color */
+  border-left-style: none;
+  /* column_labels.border.lr.style */
+  border-left-width: 1px;
+  /* column_labels.border.lr.width */
+  border-left-color: #D3D3D3;
+  /* column_labels.border.lr.color */
+  border-right-style: none;
+  /* column_labels.border.lr.style */
+  border-right-width: 1px;
+  /* column_labels.border.lr.width */
+  border-right-color: #D3D3D3;
+  /* column_labels.border.lr.color */
+}
+
+#opucivlvev .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* column_labels.background.color */
+  font-size: 100%;
+  /* column_labels.font.size */
+  font-weight: normal;
+  /* column_labels.font.weight */
+  text-transform: inherit;
+  /* column_labels.text_transform */
+  vertical-align: middle;
+  padding: 5px;
+  margin: 10px;
+  overflow-x: hidden;
+}
+
+#opucivlvev .gt_sep_right {
+  border-right: 5px solid #FFFFFF;
+}
+
+#opucivlvev .gt_group_heading {
+  padding: 8px;
+  /* row_group.padding */
+  color: #333333;
+  background-color: #FFFFFF;
+  /* row_group.background.color */
+  font-size: 100%;
+  /* row_group.font.size */
+  font-weight: initial;
+  /* row_group.font.weight */
+  text-transform: inherit;
+  /* row_group.text_transform */
+  border-top-style: solid;
+  /* row_group.border.top.style */
+  border-top-width: 2px;
+  /* row_group.border.top.width */
+  border-top-color: #D3D3D3;
+  /* row_group.border.top.color */
+  border-bottom-style: solid;
+  /* row_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* row_group.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* row_group.border.bottom.color */
+  border-left-style: none;
+  /* row_group.border.left.style */
+  border-left-width: 1px;
+  /* row_group.border.left.width */
+  border-left-color: #D3D3D3;
+  /* row_group.border.left.color */
+  border-right-style: none;
+  /* row_group.border.right.style */
+  border-right-width: 1px;
+  /* row_group.border.right.width */
+  border-right-color: #D3D3D3;
+  /* row_group.border.right.color */
+  vertical-align: middle;
+}
+
+#opucivlvev .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  /* row_group.background.color */
+  font-size: 100%;
+  /* row_group.font.size */
+  font-weight: initial;
+  /* row_group.font.weight */
+  border-top-style: solid;
+  /* row_group.border.top.style */
+  border-top-width: 2px;
+  /* row_group.border.top.width */
+  border-top-color: #D3D3D3;
+  /* row_group.border.top.color */
+  border-bottom-style: solid;
+  /* row_group.border.bottom.style */
+  border-bottom-width: 2px;
+  /* row_group.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* row_group.border.bottom.color */
+  vertical-align: middle;
+}
+
+#opucivlvev .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+  /* row.striping.background_color */
+}
+
+#opucivlvev .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#opucivlvev .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#opucivlvev .gt_row {
+  padding-top: 8px;
+  /* data_row.padding */
+  padding-bottom: 8px;
+  /* data_row.padding */
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  /* table_body.hlines.style */
+  border-top-width: 1px;
+  /* table_body.hlines.width */
+  border-top-color: #D3D3D3;
+  /* table_body.hlines.color */
+  border-left-style: none;
+  /* table_body.vlines.style */
+  border-left-width: 1px;
+  /* table_body.vlines.width */
+  border-left-color: #D3D3D3;
+  /* table_body.vlines.color */
+  border-right-style: none;
+  /* table_body.vlines.style */
+  border-right-width: 1px;
+  /* table_body.vlines.width */
+  border-right-color: #D3D3D3;
+  /* table_body.vlines.color */
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#opucivlvev .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* stub.background.color */
+  font-weight: initial;
+  /* stub.font.weight */
+  text-transform: inherit;
+  /* stub.text_transform */
+  border-right-style: solid;
+  /* stub.border.style */
+  border-right-width: 2px;
+  /* stub.border.width */
+  border-right-color: #D3D3D3;
+  /* stub.border.color */
+  padding-left: 12px;
+}
+
+#opucivlvev .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* summary_row.background.color */
+  text-transform: inherit;
+  /* summary_row.text_transform */
+  padding-top: 8px;
+  /* summary_row.padding */
+  padding-bottom: 8px;
+  /* summary_row.padding */
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opucivlvev .gt_first_summary_row {
+  padding-top: 8px;
+  /* summary_row.padding */
+  padding-bottom: 8px;
+  /* summary_row.padding */
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  /* summary_row.border.style */
+  border-top-width: 2px;
+  /* summary_row.border.width */
+  border-top-color: #D3D3D3;
+  /* summary_row.border.color */
+}
+
+#opucivlvev .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* grand_summary_row.background.color */
+  text-transform: inherit;
+  /* grand_summary_row.text_transform */
+  padding-top: 8px;
+  /* grand_summary_row.padding */
+  padding-bottom: 8px;
+  /* grand_summary_row.padding */
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#opucivlvev .gt_first_grand_summary_row {
+  padding-top: 8px;
+  /* grand_summary_row.padding */
+  padding-bottom: 8px;
+  /* grand_summary_row.padding */
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  /* grand_summary_row.border.style */
+  border-top-width: 6px;
+  /* grand_summary_row.border.width */
+  border-top-color: #D3D3D3;
+  /* grand_summary_row.border.color */
+}
+
+#opucivlvev .gt_table_body {
+  border-top-style: solid;
+  /* table_body.border.top.style */
+  border-top-width: 2px;
+  /* table_body.border.top.width */
+  border-top-color: #D3D3D3;
+  /* table_body.border.top.color */
+  border-bottom-style: solid;
+  /* table_body.border.bottom.style */
+  border-bottom-width: 2px;
+  /* table_body.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* table_body.border.bottom.color */
+}
+
+#opucivlvev .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* footnotes.background.color */
+  border-bottom-style: none;
+  /* footnotes.border.bottom.style */
+  border-bottom-width: 2px;
+  /* footnotes.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* footnotes.border.bottom.color */
+  border-left-style: none;
+  /* footnotes.border.lr.color */
+  border-left-width: 2px;
+  /* footnotes.border.lr.color */
+  border-left-color: #D3D3D3;
+  /* footnotes.border.lr.color */
+  border-right-style: none;
+  /* footnotes.border.lr.color */
+  border-right-width: 2px;
+  /* footnotes.border.lr.color */
+  border-right-color: #D3D3D3;
+  /* footnotes.border.lr.color */
+}
+
+#opucivlvev .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  /* footnotes.font.size */
+  padding: 4px;
+  /* footnotes.padding */
+}
+
+#opucivlvev .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  /* source_notes.background.color */
+  border-bottom-style: none;
+  /* source_notes.border.bottom.style */
+  border-bottom-width: 2px;
+  /* source_notes.border.bottom.width */
+  border-bottom-color: #D3D3D3;
+  /* source_notes.border.bottom.color */
+  border-left-style: none;
+  /* source_notes.border.lr.style */
+  border-left-width: 2px;
+  /* source_notes.border.lr.style */
+  border-left-color: #D3D3D3;
+  /* source_notes.border.lr.style */
+  border-right-style: none;
+  /* source_notes.border.lr.style */
+  border-right-width: 2px;
+  /* source_notes.border.lr.style */
+  border-right-color: #D3D3D3;
+  /* source_notes.border.lr.style */
+}
+
+#opucivlvev .gt_sourcenote {
+  font-size: 90%;
+  /* source_notes.font.size */
+  padding: 4px;
+  /* source_notes.padding */
+}
+
+#opucivlvev .gt_left {
+  text-align: left;
+}
+
+#opucivlvev .gt_center {
+  text-align: center;
+}
+
+#opucivlvev .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#opucivlvev .gt_font_normal {
+  font-weight: normal;
+}
+
+#opucivlvev .gt_font_bold {
+  font-weight: bold;
+}
+
+#opucivlvev .gt_font_italic {
+  font-style: italic;
+}
+
+#opucivlvev .gt_super {
+  font-size: 65%;
+}
+
+#opucivlvev .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="opucivlvev" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal gt_center" style>STEM Major Statistics</th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_center gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">College Major</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Median Salary</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Percent Women Employed</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Percent Men Employed</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Engineering</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">BIOMEDICAL ENGINEERING</td>
+      <td class="gt_row gt_center">$60,000.00</td>
+      <td class="gt_row gt_center">44&percnt;</td>
+      <td class="gt_row gt_center">56&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">ARCHITECTURE</td>
+      <td class="gt_row gt_center gt_striped">$40,000.00</td>
+      <td class="gt_row gt_center gt_striped">45&percnt;</td>
+      <td class="gt_row gt_center gt_striped">55&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">MINING AND MINERAL ENGINEERING</td>
+      <td class="gt_row gt_center">$75,000.00</td>
+      <td class="gt_row gt_center">10&percnt;</td>
+      <td class="gt_row gt_center">90&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">MECHANICAL ENGINEERING RELATED TECHNOLOGIES</td>
+      <td class="gt_row gt_center gt_striped">$40,000.00</td>
+      <td class="gt_row gt_center gt_striped">8&percnt;</td>
+      <td class="gt_row gt_center gt_striped">92&percnt;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Physical Sciences</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">NUCLEAR, INDUSTRIAL RADIOLOGY, AND BIOLOGICAL TECHNOLOGIES</td>
+      <td class="gt_row gt_center">$46,000.00</td>
+      <td class="gt_row gt_center">75&percnt;</td>
+      <td class="gt_row gt_center">25&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">OCEANOGRAPHY</td>
+      <td class="gt_row gt_center gt_striped">$44,700.00</td>
+      <td class="gt_row gt_center gt_striped">69&percnt;</td>
+      <td class="gt_row gt_center gt_striped">31&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">PHYSICS</td>
+      <td class="gt_row gt_center">$45,000.00</td>
+      <td class="gt_row gt_center">28&percnt;</td>
+      <td class="gt_row gt_center">72&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">ATMOSPHERIC SCIENCES AND METEOROLOGY</td>
+      <td class="gt_row gt_center gt_striped">$35,000.00</td>
+      <td class="gt_row gt_center gt_striped">32&percnt;</td>
+      <td class="gt_row gt_center gt_striped">68&percnt;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Computers &amp; Mathematics</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">MATHEMATICS</td>
+      <td class="gt_row gt_center">$45,000.00</td>
+      <td class="gt_row gt_center">45&percnt;</td>
+      <td class="gt_row gt_center">55&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">STATISTICS AND DECISION SCIENCE</td>
+      <td class="gt_row gt_center gt_striped">$45,000.00</td>
+      <td class="gt_row gt_center gt_striped">53&percnt;</td>
+      <td class="gt_row gt_center gt_striped">47&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">MATHEMATICS AND COMPUTER SCIENCE</td>
+      <td class="gt_row gt_center">$42,000.00</td>
+      <td class="gt_row gt_center">18&percnt;</td>
+      <td class="gt_row gt_center">82&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">COMPUTER ADMINISTRATION MANAGEMENT AND SECURITY</td>
+      <td class="gt_row gt_center gt_striped">$37,500.00</td>
+      <td class="gt_row gt_center gt_striped">18&percnt;</td>
+      <td class="gt_row gt_center gt_striped">82&percnt;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Biology &amp; Life Science</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">PHARMACOLOGY</td>
+      <td class="gt_row gt_center">$45,000.00</td>
+      <td class="gt_row gt_center">71&percnt;</td>
+      <td class="gt_row gt_center">29&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">NEUROSCIENCE</td>
+      <td class="gt_row gt_center gt_striped">$35,000.00</td>
+      <td class="gt_row gt_center gt_striped">64&percnt;</td>
+      <td class="gt_row gt_center gt_striped">36&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">GENETICS</td>
+      <td class="gt_row gt_center">$40,000.00</td>
+      <td class="gt_row gt_center">52&percnt;</td>
+      <td class="gt_row gt_center">48&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">BIOCHEMICAL SCIENCES</td>
+      <td class="gt_row gt_center gt_striped">$37,400.00</td>
+      <td class="gt_row gt_center gt_striped">52&percnt;</td>
+      <td class="gt_row gt_center gt_striped">48&percnt;</td>
+    </tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Health</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">MEDICAL ASSISTING SERVICES</td>
+      <td class="gt_row gt_center">$42,000.00</td>
+      <td class="gt_row gt_center">93&percnt;</td>
+      <td class="gt_row gt_center">7&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">COMMUNICATION DISORDERS SCIENCES AND SERVICES</td>
+      <td class="gt_row gt_center gt_striped">$28,000.00</td>
+      <td class="gt_row gt_center gt_striped">97&percnt;</td>
+      <td class="gt_row gt_center gt_striped">3&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left">PHARMACY PHARMACEUTICAL SCIENCES AND ADMINISTRATION</td>
+      <td class="gt_row gt_center">$40,000.00</td>
+      <td class="gt_row gt_center">63&percnt;</td>
+      <td class="gt_row gt_center">37&percnt;</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_striped">HEALTH AND MEDICAL PREPARATORY PROGRAMS</td>
+      <td class="gt_row gt_center gt_striped">$33,500.00</td>
+      <td class="gt_row gt_center gt_striped">57&percnt;</td>
+      <td class="gt_row gt_center gt_striped">43&percnt;</td>
+    </tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="4">Data from <a href="https://https://github.com/fivethirtyeight/data/tree/master/college-majors">fivethirtyeight</a></td>
+    </tr>
+  </tfoot>
+  
+</table></div>
+
+---
+
+# Reactable Table 
+
+
+
+<div id="htmlwidget-b718189d48fc1f880ad7" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b718189d48fc1f880ad7">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Major Category":["Engineering","Physical Sciences","Computers & Mathematics","Computers & Mathematics","Biology & Life Science","Physical Sciences","Health","Engineering","Biology & Life Science","Health","Engineering","Physical Sciences","Computers & Mathematics","Engineering","Biology & Life Science","Health","Computers & Mathematics","Biology & Life Science","Physical Sciences","Health"],"Major":["BIOMEDICAL ENGINEERING","NUCLEAR, INDUSTRIAL RADIOLOGY, AND BIOLOGICAL TECHNOLOGIES","MATHEMATICS","STATISTICS AND DECISION SCIENCE","PHARMACOLOGY","OCEANOGRAPHY","MEDICAL ASSISTING SERVICES","ARCHITECTURE","NEUROSCIENCE","COMMUNICATION DISORDERS SCIENCES AND SERVICES","MINING AND MINERAL ENGINEERING","PHYSICS","MATHEMATICS AND COMPUTER SCIENCE","MECHANICAL ENGINEERING RELATED TECHNOLOGIES","GENETICS","PHARMACY PHARMACEUTICAL SCIENCES AND ADMINISTRATION","COMPUTER ADMINISTRATION MANAGEMENT AND SECURITY","BIOCHEMICAL SCIENCES","ATMOSPHERIC SCIENCES AND METEOROLOGY","HEALTH AND MEDICAL PREPARATORY PROGRAMS"],"Median Salary":[60000,46000,45000,45000,45000,44700,42000,40000,35000,28000,75000,45000,42000,40000,40000,40000,37500,37400,35000,33500],"Percent Women Employed":[0.437846873955199,0.75047258979206,0.448098678122022,0.52647576387778,0.707718501702611,0.688999172870141,0.927807246246516,0.451464885825075,0.638146819878504,0.967998119073121,0.101851851851852,0.281936407193081,0.178981937602627,0.0774530271398747,0.515543328748281,0.630716317778438,0.180882717579965,0.51540644897333,0.321296067276775,0.566640502354788],"Percent Men Employed":[0.562153126044801,0.24952741020794,0.551901321877978,0.47352423612222,0.292281498297389,0.311000827129859,0.0721927537534838,0.548535114174925,0.361853180121496,0.032001880926879,0.898148148148148,0.718063592806919,0.821018062397373,0.922546972860125,0.484456671251719,0.369283682221562,0.819117282420035,0.48459355102667,0.678703932723225,0.433359497645212]},"columns":[{"accessor":"Major Category","name":"Major Category","type":"character"},{"accessor":"Major","name":"Major","type":"character"},{"accessor":"Median Salary","name":"Median Salary","type":"numeric","format":{"cell":{"prefix":"$","digits":2,"separators":true},"aggregated":{"prefix":"$","digits":2,"separators":true}}},{"accessor":"Percent Women Employed","name":"Percent Women Employed","type":"numeric","format":{"cell":{"digits":2,"percent":true},"aggregated":{"digits":2,"percent":true}}},{"accessor":"Percent Men Employed","name":"Percent Men Employed","type":"numeric","format":{"cell":{"digits":2,"percent":true},"aggregated":{"digits":2,"percent":true}}}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"21dbaebeb02ccecf3e361ddaf02aa62d"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  /* Replace <script> tags in slides area to make them executable
+   *
+   * Runs after post-processing of markdown source into slides and replaces only
+   * <script>s on the last slide of continued slides using the .has-continuation
+   * class added by xaringan. Finally, any <script>s in the slides area that
+   * aren't executed are commented out.
+   */
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container:not(.has-continuation) script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+  var scriptsNotExecuted = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container.has-continuation script'
+  );
+  if (!scriptsNotExecuted.length) return;
+  for (var i = 0; i < scriptsNotExecuted.length; i++) {
+    var comment = document.createComment(scriptsNotExecuted[i].outerHTML)
+    scriptsNotExecuted[i].parentElement.replaceChild(comment, scriptsNotExecuted[i])
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
